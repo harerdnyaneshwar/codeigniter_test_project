@@ -5,6 +5,11 @@ machine:
     version: 7.1.0
 test:
   override:
+    - pwd
+    - export cwd=`pwd`
+    - composer self-update
+    - cd ..
+    - pwd
     - git clone https://github.com/kenjis/ci-app-for-ci-phpunit-test.git
     - cd ci-app-for-ci-phpunit-test
     - rm application/tests/_ci_phpunit_test
